@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { ThemeProvider } from "./provider";
 
 export const metadata: Metadata = {
   title: "MechaFusion",
@@ -18,16 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
           <Navbar />
           {children}
           <Footer />
-        </ThemeProvider>
       </body>
     </html>
   );
