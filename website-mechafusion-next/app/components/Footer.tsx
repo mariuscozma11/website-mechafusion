@@ -6,32 +6,27 @@ const Footer = () => {
     {
       id: 1,
       text: "Acasa",
-      href: "#",
+      href: "#Acasa",
     },
     {
       id: 2,
       text: "Despre",
-      href: "#",
+      href: "#Despre",
     },
     {
       id: 3,
-      text: "Proiecte",
-      href: "#",
+      text: "Contact",
+      href: "#Contact",
     },
     {
       id: 4,
-      text: "Contact",
-      href: "#",
-    },
-    {
-      id: 5,
       text: "Politica de confidentialitate",
       href: "#",
     },
   ];
   return (
     <footer className="bg-white shadow-sm dark:bg-gray-900 ">
-      <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+      <div className="w-full px-[5%] lg:px-[10%] mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <a
             href="#"
@@ -65,7 +60,7 @@ const Footer = () => {
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
-          © 2023{" "}
+          © 2025{" "}
           <a href="https://flowbite.com/" className="hover:underline">
             MechaFusion™
           </a>
