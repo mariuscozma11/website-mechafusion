@@ -1,7 +1,28 @@
+"use client";
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 
 const Contact = () => {
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: "YOUR_ACCESS_KEY_HERE",
+        name: e.target.name.value,
+        email: e.target.email.value,
+        message: e.target.message.value,
+      }),
+    });
+    const result = await response.json();
+    if (result.success) {
+      console.log(result);
+    }
+  }
   return (
     <section
       id="Contact"
@@ -87,8 +108,11 @@ const Contact = () => {
               <div className="ml-4 text-md tracking-wide font-semibold w-40">
                 office@clubrobotica.upt.ro
               </div>
+              
             </div>
+            
           </div>
+          
         </div>
       </div>
       <img
