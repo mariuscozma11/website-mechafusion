@@ -83,14 +83,20 @@ The design will likely be based on a Figma layout, which Tailwind integrates wit
 - [x] Create README file and begin planning/documentation  
   I started the project by setting up a clear structure and writing the initial README to define the purpose, features, and scope before touching any code.
 
-- [ ] Initialize project with `create-next-app@latest` and integrate Tailwind CSS  
+- [x] Initialize project with `create-next-app@latest` and integrate Tailwind CSS  
   I will use `create-next-app` to bootstrap the Next.js project and immediately set up Tailwind CSS for styling.
 
-- [ ] Find/Create/Adapt UI designs in Figma  
-  I’ll search for existing design inspiration or create my own Figma layout covering the main sections (hero, about, projects, contact form, etc).
+- [x] Basic minimalistic UI design MVP 
+  I added basic Navbar, Footer, Hero, About, and Contact sections, each within a unique component.
 
-- [ ] Structure and build UI components based on Figma designs or chosen frontend patterns  
-  I plan to break down the layout into reusable components like `<Header />`, `<Hero />`, `<ProjectCard />`, `<ContactForm />`, and `<Footer />`, implemented with Tailwind CSS.
+- [ ] Add contact form API
+  Using a third party free contact from API provider, I plan to integrate it. Already found and copied the handle from the API from Web3Forms, to do: add the jsx for the form.
+
+- [ ] Projects section
+  Not being able to make a web server application, the projects will not have a db, the images and details of the projects will be stored directly in the frontend. Being a single page website, i'm thinking slide carousel with pressable modals for more details.
+
+- [ ] The registration form
+  Should be a placeholder for now, because the club is not currently recruiting, but it could still use some style.
 
 ---
 
