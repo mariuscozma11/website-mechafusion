@@ -80,23 +80,8 @@ The design will likely be based on a Figma layout, which Tailwind integrates wit
 ```
 ## Development Plan
 
-- [x] Create README file and begin planning/documentation  
-  I started the project by setting up a clear structure and writing the initial README to define the purpose, features, and scope before touching any code.
-
-- [x] Initialize project with `create-next-app@latest` and integrate Tailwind CSS  
-  I will use `create-next-app` to bootstrap the Next.js project and immediately set up Tailwind CSS for styling.
-
-- [x] Basic minimalistic UI design MVP 
-  I added basic Navbar, Footer, Hero, About, and Contact sections, each within a unique component.
-
-- [ ] Add contact form API
-  Using a third party free contact from API provider, I plan to integrate it. Already found and copied the handle from the API from Web3Forms, to do: add the jsx for the form.
-
-- [ ] Projects section
-  Not being able to make a web server application, the projects will not have a db, the images and details of the projects will be stored directly in the frontend. Being a single page website, i'm thinking slide carousel with pressable modals for more details.
-
-- [ ] The registration form
-  Should be a placeholder for now, because the club is not currently recruiting, but it could still use some style.
+First iteration of the design was directly designed into the frontend, which now I see why it's inefficient. I've spent a bit too much time on that, just to talk to the client to tell me that he doesn't quite like the design. I'm not too inclined to UI design and front end development in general, but this was a design oriented project so I shoud give my utmost interest to make it look good for the client. So i started making a design in Figma first, and sending screenshots to the client until he's satisfied. It's a more efficient way to iterate trough designs until the client's satisfaction. With client collaboration I locked in a Hero Section design, with navbar. It's a simple image background Hero Section with overlay opacity and a simple nav bar with nav links, logo and button.
+Next step, I want to design the footer element in Figma, and after I am satisfied with a design, I could actually start coding what I have so far, since all my Designy Creative juice is out, and I miss coding. Also, I want to make the nav bar transition from the normal position with transparent background, with one with a 80% opacity and rounded bottom edges on scroll.
 
 ---
 
