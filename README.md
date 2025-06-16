@@ -54,14 +54,6 @@ In the future, the site may also include a blog section or articles related to r
 
 ---
 
-## Target Audience
-
-The website is primarily intended for students of the Politehnica University of Timișoara.  
-Regardless of their faculty or field of study, all students are welcome to explore the club and get involved.  
-The robotics club includes multiple departments (mechanical design, electronics, programming, marketing, etc.), offering opportunities for students with a wide range of interests and skill sets.
-
----
-
 ## Proposed Tech Stack
 
 Since the project is a static website with no dynamic content or backend functionality (at this stage), the most appropriate approach is to use a Static Site Generator (SSG).  
