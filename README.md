@@ -73,11 +73,6 @@ The design will likely be based on a Figma layout, which Tailwind integrates wit
 
 ---
 
-## Project Structure
-
-```bash
-📁 root
-```
 ## Development Plan
 
 First iteration of the design was directly designed into the frontend, which now I see why it's inefficient. I've spent a bit too much time on that, just to talk to the client to tell me that he doesn't quite like the design. I'm not too inclined to UI design and front end development in general, but this was a design oriented project so I shoud give my utmost interest to make it look good for the client. So i started making a design in Figma first, and sending screenshots to the client until he's satisfied. It's a more efficient way to iterate trough designs until the client's satisfaction. With client collaboration I locked in a Hero Section design, with navbar. It's a simple image background Hero Section with overlay opacity and a simple nav bar with nav links, logo and button.
