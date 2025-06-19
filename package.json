@@ -1,0 +1,24 @@
+{
+  "name": "website-mechafusion",
+  "version": "1.0.0",
+  "description": "This project is a simple landing page created for the official robotics club of the Politehnica University of Timișoara.   Its purpose is to present the club's mission, activities, and team, and to offer an easy way for students to get in touch or join.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariuscozma11/website-mechafusion.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mariuscozma11/website-mechafusion/issues"
+  },
+  "homepage": "https://github.com/mariuscozma11/website-mechafusion#readme",
+  "dependencies": {
+    "tailwindcss": "^4.1.10"
+  }
+}
