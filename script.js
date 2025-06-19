@@ -1,6 +1,8 @@
 const navbar = document.querySelector("nav");
 const itemList = document.getElementById("item-list");
-const listaProiecte = document.getElementById("lista-proiecte")
+const listaProiecte = document.getElementById("lista-proiecte");
+let isScrolled = false;
+
 const navItems = [
   {
     name: "Acasă",
@@ -24,37 +26,37 @@ const navItems = [
   },
 ];
 const proiecte = [
-    {
-      title: "Robot Autonom",
-      description: "Robot care navighează autonom folosind senzori și AI",
-      image: "/placeholder.svg?height=200&width=300",
-    },
-    {
-      title: "Braț Robotic",
-      description: "Braț robotic controlat prin gesturi și voce",
-      image: "/placeholder.svg?height=200&width=300",
-    },
-    {
-      title: "Dronă Inteligentă",
-      description: "Dronă cu capacități de recunoaștere și urmărire",
-      image: "/placeholder.svg?height=200&width=300",
-    },
-    {
-      title: "Casa Inteligentă",
-      description: "Sistem IoT pentru automatizarea casei",
-      image: "/placeholder.svg?height=200&width=300",
-    },
-    {
-      title: "Robot Competiție",
-      description: "Robot pentru competițiile naționale de robotică",
-      image: "/placeholder.svg?height=200&width=300",
-    },
-    {
-      title: "AI Assistant",
-      description: "Asistent virtual cu recunoaștere vocală",
-      image: "/placeholder.svg?height=200&width=300",
-    },
-  ];
+  {
+    title: "Robot Autonom",
+    description: "Robot care navighează autonom folosind senzori și AI",
+    image: "/placeholder.svg?height=200&width=300",
+  },
+  {
+    title: "Braț Robotic",
+    description: "Braț robotic controlat prin gesturi și voce",
+    image: "/placeholder.svg?height=200&width=300",
+  },
+  {
+    title: "Dronă Inteligentă",
+    description: "Dronă cu capacități de recunoaștere și urmărire",
+    image: "/placeholder.svg?height=200&width=300",
+  },
+  {
+    title: "Casa Inteligentă",
+    description: "Sistem IoT pentru automatizarea casei",
+    image: "/placeholder.svg?height=200&width=300",
+  },
+  {
+    title: "Robot Competiție",
+    description: "Robot pentru competițiile naționale de robotică",
+    image: "/placeholder.svg?height=200&width=300",
+  },
+  {
+    title: "AI Assistant",
+    description: "Asistent virtual cu recunoaștere vocală",
+    image: "/placeholder.svg?height=200&width=300",
+  },
+];
 const scrollToSection = (href) => {
   const element = document.querySelector(href);
   if (element) {
@@ -77,10 +79,12 @@ itemList.innerHTML = navItems
   )
   .join("");
 
-listaProiecte.innerHTML =  proiecte.map((proiect,index)=>{return(`
+listaProiecte.innerHTML = proiecte
+  .map((proiect, index) => {
+    return `
     <div
     key = ${index}
-    class = "text-center hover:hover:shadow-xl  transition-all duration-300 rounded-lg hover:-translate-y-2 border border-zinc-200 bg-white shadow-sm"
+    class = "text-center hover:hover:shadow-xl cursor-pointer transition-all duration-300 rounded-lg hover:-translate-y-2 border border-zinc-200 bg-white shadow-sm"
     >
         <div class="h-48 bg-gradient-to-br from-cyan-100 to-blue-100 flex items-center justify-center">
 
@@ -92,5 +96,36 @@ listaProiecte.innerHTML =  proiecte.map((proiect,index)=>{return(`
             <p class="text-gray-600 text-sm">${proiect.description}</p>
         </div>
     </div>
-    `)
-}).join("")
+    `;
+  })
+  .join("");
+
+window.addEventListener("scroll", () => {
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    if (window.scrollY > 50) {
+      navbar.classList.remove("absolute", "top-8", "bg-transparent");
+      navbar.classList.add(
+        "fixed",
+        "top-0",
+        "bg-slate-900/60",
+        "backdrop-blur-sm",
+        "shadow-2xl",
+        "rounded-b-2xl",
+        "border",
+        "border-cyan-500/20"
+      );
+    } else {
+      navbar.classList.remove(
+        "fixed",
+        "top-0",
+        "bg-slate-900/90",
+        "backdrop-blur-md",
+        "shadow-2xl",
+        "rounded-b-2xl",
+        "border",
+        "border-cyan-500/20"
+      );
+      navbar.classList.add("absolute", "top-8", "bg-transparent");
+    }
+  }
+});
