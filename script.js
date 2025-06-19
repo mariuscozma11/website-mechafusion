@@ -1,6 +1,7 @@
 const navbar = document.querySelector("nav");
 const itemList = document.getElementById("item-list");
 const listaProiecte = document.getElementById("lista-proiecte");
+const contactForm = document.getElementById('contact-form')
 let isScrolled = false;
 
 const navItems = [
@@ -129,3 +130,8 @@ window.addEventListener("scroll", () => {
     }
   }
 });
+
+const submitForm = () => {
+  document.forms["contact-form"].submit();
+  contactForm.reset();
+}

@@ -48,7 +48,7 @@
             id="item-list"
           ></div>
           <!-- Buton CTA -->
-          <div class="hidden  lg:block">
+          <div class="hidden lg:block">
             <button
               onclick="scrollToSection('#inscriere')"
               class="h-10 px-4 gap-2 rounded-md focus-visible:outline-none text-[14px] transition-all duration-300 hover:scale-105 font-semibold cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 whitespace-nowrap"
@@ -134,7 +134,7 @@
             <button
               class="flex flex-row justify-center items-center gap-4 cursor-pointer rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-4 hover:from-cyan-600 hover:to-blue-700 px-8 text-lg font-semibold transform hover:scale-105 transition-all duration-300"
               onclick="scrollToSection('#inscriere')"
-              >
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -351,7 +351,14 @@
             Trimite-ne un mesaj
           </h2>
         </div>
-        <div class="p-6 pt-0 space-y-6">
+        <form
+          class="p-6 pt-0 space-y-6"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          id="contact-form"
+        >
+          <input type="hidden" name="access_key" value="2088dc20-cb29-4cfe-9558-9de4dcec3c1a" />
+          <input type="hidden" name="redirect" value="#">
           <div class="grid md:grid-cols-2 gap-4">
             <div class="space-y-2">
               <label htmlFor="nume">Nume</label>
@@ -359,6 +366,8 @@
                 class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 id="nume"
                 placeholder="Numele tău"
+                name="Nume"
+                required
               />
             </div>
             <div class="space-y-2">
@@ -368,6 +377,8 @@
                 id="email"
                 type="email"
                 placeholder="email@exemplu.com"
+                name="Email"
+                required
               />
             </div>
           </div>
@@ -377,6 +388,8 @@
               class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
               id="subiect"
               placeholder="Subiectul mesajului"
+              name="Subiect"
+              required
             />
           </div>
           <div class="space-y-2">
@@ -386,11 +399,16 @@
               placeholder="Scrie mesajul tau aici..."
               rows="5"
               id="mesaj"
+              name="Mesaj"
+              required
             ></textarea>
           </div>
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
           <button
             class="py-3 cursor-pointer inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700"
-          >
+            type="button"
+            onclick="submitForm()"
+            >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -408,7 +426,7 @@
             </svg>
             Trimite mesajul
           </button>
-        </div>
+        </form>
       </div>
     </section>
     <!-- Sectiune contact - final -->
@@ -475,9 +493,7 @@
                 />
               </div>
               <div class="space-y-2">
-                <label htmlFor="telefon" class="text-white">
-                  Telefon
-                </label>
+                <label htmlFor="telefon" class="text-white"> Telefon </label>
                 <input
                   id="telefon"
                   placeholder="Numărul de telefon"
@@ -497,9 +513,25 @@
               ></textarea>
             </div>
             <button
-              class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap rounded-md  font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700 text-lg py-3"
+              class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700 text-lg py-3"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 lucide lucide-users-icon lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="mr-2 lucide lucide-users-icon lucide-users"
+              >
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <circle cx="9" cy="7" r="4" />
+              </svg>
               Înscrie-te în MechaFusion
             </button>
           </div>
