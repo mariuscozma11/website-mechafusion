@@ -1,8 +1,12 @@
 const navbar = document.querySelector("nav");
 const itemList = document.getElementById("item-list");
 const listaProiecte = document.getElementById("lista-proiecte");
-const contactForm = document.getElementById('contact-form')
+const contactForm = document.getElementById("contact-form");
+const mobileMenu = document.getElementById("mobile-menu");
+const mobileMenuList = document.getElementById("mobile-menu-list");
+const mobileContainer = document.getElementById("mobile-container");
 let isScrolled = false;
+let isMobileMenuOpen = false;
 
 const navItems = [
   {
@@ -30,32 +34,38 @@ const proiecte = [
   {
     title: "Exemplu de titlu",
     description: "Exemplu de descriere",
-    image: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
+    image:
+      "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
   },
   {
     title: "Exemplu de titlu",
     description: "Exemplu de descriere",
-    image: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
+    image:
+      "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
   },
   {
     title: "Exemplu de titlu",
     description: "Exemplu de descriere",
-    image: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
+    image:
+      "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
   },
   {
     title: "Exemplu de titlu",
     description: "Exemplu de descriere",
-    image: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
+    image:
+      "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
   },
   {
     title: "Exemplu de titlu",
     description: "Exemplu de descriere",
-    image: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
+    image:
+      "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
   },
   {
     title: "Exemplu de titlu",
     description: "Exemplu de descriere",
-    image: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
+    image:
+      "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
   },
 ];
 const scrollToSection = (href) => {
@@ -77,6 +87,21 @@ itemList.innerHTML = navItems
     <span class=""font-medium>${item.name}</span>
     </button>
 `
+  )
+  .join("");
+
+mobileMenuList.innerHTML = navItems
+  .map(
+    (item) => `
+    <button
+    key=${item.name}
+    onclick='scrollToSection("${item.href}")'
+    class="cursor-pointer flex items-center space-x-3 px-4 py-3 rounded-lg text-white hover:bg-white/15 hover:text-indigo-100 transition-colors duration-200 text-left group"
+    >
+      ${item.icon}
+      <span class="font-medium text-lg">${item.name}</span>
+    </button>
+  `
   )
   .join("");
 
@@ -134,6 +159,43 @@ window.addEventListener("scroll", () => {
 const submitForm = () => {
   document.forms["contact-form"].submit();
   contactForm.reset();
-}
+};
 
+const handleMobileMenu = () => {
+  isMobileMenuOpen = !isMobileMenuOpen;
+  mobileMenu.innerHTML = isMobileMenuOpen
+    ? `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x lg:hidden md:hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>`
+    : `<svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-menu-icon lucide-menu lg:hidden md:hidden"
+            >
+              <path d="M4 12h16" />
+              <path d="M4 18h16" />
+              <path d="M4 6h16" />
+            </svg>`;
+};
+
+mobileMenu.addEventListener("click", () => {
+  handleMobileMenu();
+  console.log(isMobileMenuOpen);
+  if (isMobileMenuOpen) {
+    mobileContainer.classList.add("opacity-100", "max-h-screen", "mt-8");
+    mobileContainer.classList.remove("opacity-0", "max-h-0");
+    navbar.classList.add("bg-slate-900/90", "backdrop-blur-sm","w-full","top-0");
+    navbar.classList.remove("bg-transparent","w-11/12","top-8");
+  } else {
+    mobileContainer.classList.add("opacity-0", "max-h-0");
+    mobileContainer.classList.remove("opacity-100", "max-h-screen", "mt-8");
+    navbar.classList.add("bg-transparent","w-11/12","top-8");
+    navbar.classList.remove("bg-slate-900/90", "backdrop-blur-sm","w-full","top-0");
+  }
+});
 // npx @tailwindcss/cli -i ./style.css -o ./output.css --watch

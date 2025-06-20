@@ -57,7 +57,10 @@
             </button>
           </div>
           <!-- Buton meniu mobil -->
-          <button class="cursor-pointer">
+          <button 
+          class="cursor-pointer md:hidden transition-colors duration-300 p-2 rounded-lg text-white hover:bg-white/15 hover:text-indigo-100"
+          id="mobile-menu"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
@@ -76,6 +79,11 @@
             </svg>
           </button>
         </div>
+        <div id="mobile-container" class="md:hidden transition-all duration-300 overflow-hidden opacity-0 max-h-0">
+          <div id="mobile-menu-list" class="flex flex-col space-y-4 pb-6">
+
+          </div>
+        </div>
       </div>
     </nav>
     <!-- Bara de navigare - final -->
@@ -90,7 +98,7 @@
       <div
         class="flex items-center justify-center min-h-screen px-4 relative z-10"
       >
-        <div class="text-center max-w-5xl">
+        <div  class="text-center max-w-5xl">
           <div class="flex justify-center mb-8">
             <div
               class="w-24 h-24 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl flex items-center justify-center animate-pulse"
@@ -161,6 +169,7 @@
               Află mai multe
             </button>
           </div>
+          
         </div>
       </div>
     </header>
