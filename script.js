@@ -28,34 +28,34 @@ const navItems = [
 ];
 const proiecte = [
   {
-    title: "Robot Autonom",
-    description: "Robot care navighează autonom folosind senzori și AI",
-    image: "/placeholder.svg?height=200&width=300",
+    title: "Exemplu de titlu",
+    description: "Exemplu de descriere",
+    image: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
   },
   {
-    title: "Braț Robotic",
-    description: "Braț robotic controlat prin gesturi și voce",
-    image: "/placeholder.svg?height=200&width=300",
+    title: "Exemplu de titlu",
+    description: "Exemplu de descriere",
+    image: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
   },
   {
-    title: "Dronă Inteligentă",
-    description: "Dronă cu capacități de recunoaștere și urmărire",
-    image: "/placeholder.svg?height=200&width=300",
+    title: "Exemplu de titlu",
+    description: "Exemplu de descriere",
+    image: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
   },
   {
-    title: "Casa Inteligentă",
-    description: "Sistem IoT pentru automatizarea casei",
-    image: "/placeholder.svg?height=200&width=300",
+    title: "Exemplu de titlu",
+    description: "Exemplu de descriere",
+    image: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
   },
   {
-    title: "Robot Competiție",
-    description: "Robot pentru competițiile naționale de robotică",
-    image: "/placeholder.svg?height=200&width=300",
+    title: "Exemplu de titlu",
+    description: "Exemplu de descriere",
+    image: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
   },
   {
-    title: "AI Assistant",
-    description: "Asistent virtual cu recunoaștere vocală",
-    image: "/placeholder.svg?height=200&width=300",
+    title: "Exemplu de titlu",
+    description: "Exemplu de descriere",
+    image: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
   },
 ];
 const scrollToSection = (href) => {
@@ -88,7 +88,7 @@ listaProiecte.innerHTML = proiecte
     class = "text-center hover:hover:shadow-xl cursor-pointer transition-all duration-300 rounded-lg hover:-translate-y-2 border border-zinc-200 bg-white shadow-sm"
     >
         <div class="h-48 bg-gradient-to-br from-cyan-100 to-blue-100 flex items-center justify-center">
-
+          <img class="object-cover w-full h-full" src="${proiect.image}">
         </div>
         <div class="text-xl font-bold text-gray-800 leading-none tracking-tight">
             <h2 class="text-xl font-bold text-gray-800">${proiect.title}</h2>
@@ -135,3 +135,5 @@ const submitForm = () => {
   document.forms["contact-form"].submit();
   contactForm.reset();
 }
+
+// npx @tailwindcss/cli -i ./style.css -o ./output.css --watch

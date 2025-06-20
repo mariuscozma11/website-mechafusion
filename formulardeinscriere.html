@@ -1,0 +1,73 @@
+<div class="p-6 pt-0 space-y-6">
+  <div class="grid md:grid-cols-2 gap-4">
+    <div class="space-y-2">
+      <label htmlFor="nume-inscriere" class="text-white"> Nume Complet </label>
+      <input
+        id="nume-inscriere"
+        placeholder="Numele tău complet"
+        class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-white/10 border-cyan-500/30 text-white placeholder:text-gray-400"
+      />
+    </div>
+    <div class="space-y-2">
+      <label htmlFor="email-inscriere" class="text-white"> Email </label>
+      <input
+        id="email-inscriere"
+        type="email"
+        placeholder="email@exemplu.com"
+        class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-white/10 border-cyan-500/30 text-white placeholder:text-gray-400"
+      />
+    </div>
+  </div>
+  <div class="grid md:grid-cols-2 gap-4">
+    <div class="space-y-2">
+      <label htmlFor="varsta" class="text-white"> Vârsta </label>
+      <input
+        id="varsta"
+        type="number"
+        placeholder="Vârsta ta"
+        class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-white/10 border-cyan-500/30 text-white placeholder:text-gray-400"
+      />
+    </div>
+    <div class="space-y-2">
+      <label htmlFor="telefon" class="text-white"> Telefon </label>
+      <input
+        id="telefon"
+        placeholder="Numărul de telefon"
+        class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-white/10 border-cyan-500/30 text-white placeholder:text-gray-400"
+      />
+    </div>
+  </div>
+  <div class="space-y-2">
+    <label htmlFor="experienta" class="text-white">
+      Experiența ta în robotică/programare
+    </label>
+    <textarea
+      id="experienta"
+      placeholder="Descrie experiența ta anterioară (opțional)"
+      rows="{4}"
+      class="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-white/10 border-cyan-500/30 text-white placeholder:text-gray-400"
+    ></textarea>
+  </div>
+  <button
+    class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700 text-lg py-3"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="white"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="mr-2 lucide lucide-users-icon lucide-users"
+    >
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+      <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+      <circle cx="9" cy="7" r="4" />
+    </svg>
+    Înscrie-te în MechaFusion
+  </button>
+</div>
