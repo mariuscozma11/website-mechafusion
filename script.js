@@ -145,7 +145,7 @@ window.addEventListener("scroll", () => {
         "fixed",
         "top-0",
         "bg-slate-900/90",
-        "backdrop-blur-md",
+        "backdrop-blur-sm",
         "shadow-2xl",
         "rounded-b-2xl",
         "border",
@@ -198,4 +198,5 @@ mobileMenu.addEventListener("click", () => {
     navbar.classList.remove("bg-slate-900/90", "backdrop-blur-sm","w-full","top-0");
   }
 });
+
 // npx @tailwindcss/cli -i ./style.css -o ./output.css --watch
