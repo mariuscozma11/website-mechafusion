@@ -10,11 +10,7 @@
       content="Website al clubului oficial de robotica al Universitatii Politehnica din Timisoara"
     />
     <link rel="stylesheet" href="output.css" />
-    <link
-      rel="shortcut icon"
-      href="./public/favicon.svg"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="./public/favicon.svg" type="image/x-icon" />
   </head>
   <body class="relative">
     <!-- Bara de navigare - inceput -->
@@ -91,88 +87,78 @@
     <!-- Bara de navigare - final -->
     <!-- Sectiune Hero - inceput -->
     <header
-      id="hero"
-      class="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-cyan-900 relative overflow-hidden"
+      class="relative min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-black to-gray-800 overflow-hidden"
     >
-      <div
-        class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23ffffff' fillOpacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"
-      ></div>
-      <div
-        class="flex items-center justify-center min-h-screen px-4 relative z-10"
-      >
-        <div class="text-center max-w-5xl">
-          <div class="flex justify-center mb-8">
-            <div
-              class="w-24 h-24 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl flex items-center justify-center animate-pulse"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="48"
-                height="49"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-bot-icon lucide-bot"
-              >
-                <path d="M12 8V4H8" />
-                <rect width="16" height="12" x="4" y="8" rx="2" />
-                <path d="M2 14h2" />
-                <path d="M20 14h2" />
-                <path d="M15 13v2" />
-                <path d="M9 13v2" />
-              </svg>
-            </div>
-          </div>
-          <h1
-            class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
+      <div class="relative container mx-auto px-4 py-20 md:py-32">
+        <div class="max-w-4xl mx-auto text-center">
+          <div
+            class="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/20 rounded-full px-4 py-2 mb-8"
           >
-            Bun venit la
-            <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400"
-              >MechaFusion</span
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#facc15"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-zap-icon lucide-zap"
             >
+              <path
+                d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"
+              />
+            </svg>
+            <span class="text-yellow-400 text-sm font-medium"
+              >Inovație • Tehnologie • Viitor</span
+            >
+          </div>
+
+          <h1
+            class="text-4xl md:text-6xl lg:text-7xl font-bold text-white  leading-tight"
+          >
+            Mecha<span class="text-yellow-400">Fusion</span>
+            
           </h1>
-          <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            Explorează lumea roboticii, învață programare și construiește
-            viitorul alături de noi. Alătură-te comunității noastre de tineri
-            inovatori!
+            <h2 class="text-white text-2xl lg:text-3xl mb-6 font-bold ">Clubul de robotica oficial al <span class="bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent ">U</span>niversitatii <span class="bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">P</span>olitehnica din <span class="bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent">T</span>imisoara</h2>
+          <p
+            class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+          >
+            Alătură-te clubului nostru de robotică și descoperă lumea fascinantă
+            a tehnologiei. Învață, creează și inovează alături de pasionații de
+            robotică.
           </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
             <button
-              class="flex flex-row justify-center items-center gap-4 cursor-pointer rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-4 hover:from-cyan-600 hover:to-blue-700 px-8 text-lg font-semibold transform hover:scale-105 transition-all duration-300"
-              onclick="scrollToSection('#inscriere')"
+              size="lg"
+              class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-8 py-4 text-lg group"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-users-icon lucide-users"
-              >
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                <path d="M16 3.128a4 4 0 0 1 0 7.744" />
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                <circle cx="9" cy="7" r="4" />
-              </svg>
-              Înscrie-te acum
+              Înscrie-te Acum
+             
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right-icon lucide-arrow-right ml-2 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </button>
             <button
-              class="flex flex-row justify-center items-center gap-4 cursor-pointer rounded-lg bg-white border-cyan-800 text-cyan-800 hover:bg-cyan-400 hover:text-white px-8 py-4 text-lg font-semibold transform hover:scale-105 transition-all duration-300"
-              onclick="scrollToSection('#despre')"
+              variant="outline"
+              size="lg"
+              class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-white text-white hover:bg-white hover:text-black px-8 py-4 text-lg bg-transparent"
             >
-              Află mai multe
+              Descoperă Proiectele
             </button>
+          </div>
+
+          <div class="mt-16 text-gray-400 text-sm">
+            <p>
+              Întâlniri săptămânale • Workshop-uri practice • Competiții
+              naționale
+            </p>
           </div>
         </div>
       </div>
+
+    
     </header>
     <!-- Sectiune Hero - final -->
     <!-- Sectiune despre - inceput -->
