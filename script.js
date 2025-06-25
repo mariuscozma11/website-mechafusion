@@ -1,3 +1,4 @@
+// Definire elemente
 const navbar = document.querySelector("nav");
 const itemList = document.getElementById("item-list");
 const listaProiecte = document.getElementById("lista-proiecte");
@@ -5,9 +6,14 @@ const contactForm = document.getElementById("contact-form");
 const mobileMenu = document.getElementById("mobile-menu");
 const mobileMenuList = document.getElementById("mobile-menu-list");
 const mobileContainer = document.getElementById("mobile-container");
-let isScrolled = false;
-let isMobileMenuOpen = false;
 
+// Stari pentru navbar
+let isScrolled = window.scrollY > 50;
+let isMobileMenuOpen = false;
+let isMobile = window.matchMedia("(max-width: 1024)").matches; // 768px md breakpoint pe tailwind
+let navPosition = "absolute " | "fixed";
+
+// Linkurile navbar
 const navItems = [
   {
     name: "Acasă",
@@ -30,6 +36,8 @@ const navItems = [
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>`,
   },
 ];
+
+// Lista de proiecte
 const proiecte = [
   {
     title: "Exemplu de titlu",
@@ -68,6 +76,8 @@ const proiecte = [
       "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
   },
 ];
+
+// Functie scroll pt linkuri
 const scrollToSection = (href) => {
   const element = document.querySelector(href);
   if (element) {
@@ -75,6 +85,7 @@ const scrollToSection = (href) => {
   }
 };
 
+// Mapare desktop
 itemList.innerHTML = navItems
   .map(
     (item) => `
@@ -90,6 +101,7 @@ itemList.innerHTML = navItems
   )
   .join("");
 
+// Mapare mobil
 mobileMenuList.innerHTML = navItems
   .map(
     (item) => `
@@ -105,6 +117,7 @@ mobileMenuList.innerHTML = navItems
   )
   .join("");
 
+// Mapare proiecte
 listaProiecte.innerHTML = proiecte
   .map((proiect, index) => {
     return `
@@ -126,9 +139,87 @@ listaProiecte.innerHTML = proiecte
   })
   .join("");
 
-window.addEventListener("scroll", () => {
-  if (window.matchMedia("(min-width: 768px)").matches) {
-    if (window.scrollY > 50) {
+const handleMobileMenu = () => {
+  if (isMobileMenuOpen) {
+    mobileMenu.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" 
+    width="32" 
+    height="32" 
+    viewBox="0 0 24 24" 
+    fill="none" stroke="white" 
+    stroke-width="2" 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    class="lucide lucide-x-icon lucide-x lg:hidden">
+    <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+  </svg>`;
+    mobileContainer.classList.add("opacity-100", "max-h-screen", "mt-8");
+    mobileContainer.classList.remove("opacity-0", "max-h-0");
+    navbar.classList.add(
+      "bg-slate-900/90",
+      "backdrop-blur-sm",
+      "w-full",
+      "top-0"
+    );
+    navbar.classList.remove("bg-transparent", "w-11/12", "top-8");
+  } else {
+    mobileMenu.innerHTML = `<svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-menu-icon lucide-menu lg:hidden"
+            >
+              <path d="M4 12h16" />
+              <path d="M4 18h16" />
+              <path d="M4 6h16" />
+            </svg>`;
+    mobileContainer.classList.add("opacity-0", "max-h-0");
+    mobileContainer.classList.remove("opacity-100", "max-h-screen", "mt-8");
+    navbar.classList.add("bg-transparent", "w-11/12", "top-8");
+    navbar.classList.remove(
+      "bg-slate-900/90",
+      "backdrop-blur-sm",
+      "w-full",
+      "top-0"
+    );
+  }
+};
+
+const resetMobileMenu = () => {
+  isMobileMenuOpen = false;
+  handleMobileMenu();
+};
+const resetNavbar = () => {
+  navbar.classList.remove(
+    "fixed",
+    "top-0",
+    "bg-slate-900/90",
+    "backdrop-blur-sm",
+    "shadow-2xl",
+    "rounded-b-2xl",
+    "border",
+    "border-cyan-500/20"
+  );
+  navbar.classList.add("absolute", "top-8", "bg-transparent");
+};
+
+const handleResize = () => {
+  isMobile = window.matchMedia("(max-width: 1024px)").matches;
+  resetMobileMenu();
+  resetNavbar();
+};
+
+// Handlerul de scroll
+const handleScroll = () => {
+  isScrolled = window.scrollY > 50;
+  resetMobileMenu();
+  if (!isMobile) {
+    if (isScrolled) {
       navbar.classList.remove("absolute", "top-8", "bg-transparent");
       navbar.classList.add(
         "fixed",
@@ -140,6 +231,7 @@ window.addEventListener("scroll", () => {
         "border",
         "border-cyan-500/20"
       );
+      console.log("scroll");
     } else {
       navbar.classList.remove(
         "fixed",
@@ -154,49 +246,17 @@ window.addEventListener("scroll", () => {
       navbar.classList.add("absolute", "top-8", "bg-transparent");
     }
   }
-});
+};
 
 const submitForm = () => {
   document.forms["contact-form"].submit();
   contactForm.reset();
 };
-
-const handleMobileMenu = () => {
-  isMobileMenuOpen = !isMobileMenuOpen;
-  mobileMenu.innerHTML = isMobileMenuOpen
-    ? `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x lg:hidden md:hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>`
-    : `<svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-menu-icon lucide-menu lg:hidden md:hidden"
-            >
-              <path d="M4 12h16" />
-              <path d="M4 18h16" />
-              <path d="M4 6h16" />
-            </svg>`;
-};
-
+window.addEventListener("scroll", handleScroll);
+window.addEventListener("resize", handleResize);
 mobileMenu.addEventListener("click", () => {
+  isMobileMenuOpen = !isMobileMenuOpen;
   handleMobileMenu();
-  console.log(isMobileMenuOpen);
-  if (isMobileMenuOpen) {
-    mobileContainer.classList.add("opacity-100", "max-h-screen", "mt-8");
-    mobileContainer.classList.remove("opacity-0", "max-h-0");
-    navbar.classList.add("bg-slate-900/90", "backdrop-blur-sm","w-full","top-0");
-    navbar.classList.remove("bg-transparent","w-11/12","top-8");
-  } else {
-    mobileContainer.classList.add("opacity-0", "max-h-0");
-    mobileContainer.classList.remove("opacity-100", "max-h-screen", "mt-8");
-    navbar.classList.add("bg-transparent","w-11/12","top-8");
-    navbar.classList.remove("bg-slate-900/90", "backdrop-blur-sm","w-full","top-0");
-  }
 });
 
 // npx @tailwindcss/cli -i ./style.css -o ./output.css --watch
