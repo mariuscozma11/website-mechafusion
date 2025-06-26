@@ -165,7 +165,7 @@ const handleMobileMenu = () => {
       "w-full",
       "top-0"
     );
-    navbar.classList.remove("bg-transparent", "w-11/12", "top-0");
+    navbar.classList.remove("bg-transparent", "w-11/12", "top-1");
   } else {
     mobileMenu.innerHTML = `<svg
               xmlns="http://www.w3.org/2000/svg"
@@ -185,7 +185,7 @@ const handleMobileMenu = () => {
             </svg>`;
     mobileContainer.classList.add("opacity-0", "max-h-0");
     mobileContainer.classList.remove("opacity-100", "max-h-screen", "mt-8");
-    navbar.classList.add("bg-transparent", "w-11/12", "top-0");
+    navbar.classList.add("bg-transparent", "w-11/12", "top-1");
     navbar.classList.remove(
       "bg-slate-900/90",
       "backdrop-blur-sm",
@@ -210,7 +210,7 @@ const resetNavbar = () => {
     "border",
     "border-cyan-500/20"
   );
-  navbar.classList.add("absolute", "top-0", "bg-transparent");
+  navbar.classList.add("absolute", "top-1", "bg-transparent");
 };
 
 const handleResize = () => {
@@ -225,7 +225,7 @@ const handleScroll = () => {
   resetMobileMenu();
   if (!isMobile) {
     if (isScrolled) {
-      navbar.classList.remove("absolute", "top-0", "bg-transparent");
+      navbar.classList.remove("absolute", "top-1", "bg-transparent");
       navbar.classList.add(
         "fixed",
         "top-0",
@@ -247,7 +247,7 @@ const handleScroll = () => {
         "border",
         "border-cyan-500/20"
       );
-      navbar.classList.add("absolute", "top-0", "bg-transparent");
+      navbar.classList.add("absolute", "top-1", "bg-transparent");
     }
   }
 };
