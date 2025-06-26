@@ -6,6 +6,11 @@ const contactForm = document.getElementById("contact-form");
 const mobileMenu = document.getElementById("mobile-menu");
 const mobileMenuList = document.getElementById("mobile-menu-list");
 const mobileContainer = document.getElementById("mobile-container");
+const numeInput = document.getElementById("nume")
+const emailInput = document.getElementById("email")
+const subiectInput = document.getElementById("subiect")
+const mesajInput = document.getElementById("mesaj")
+
 
 // Stari pentru navbar
 let isScrolled = window.scrollY > 50;
@@ -123,16 +128,16 @@ listaProiecte.innerHTML = proiecte
     return `
     <div
     key = ${index}
-    class = "text-center hover:hover:shadow-xl cursor-pointer transition-all duration-300 rounded-lg hover:-translate-y-2 border border-zinc-200 bg-white shadow-sm"
+    class = "text-center hover:hover:shadow-xl cursor-pointer transition-all duration-300 rounded-lg hover:-translate-y-2 border border-gray-700 bg-gray-800 shadow-sm"
     >
-        <div class="h-48 bg-gradient-to-br from-cyan-100 to-blue-100 flex items-center justify-center">
-          <img class="object-cover w-full h-full" src="${proiect.image}">
+        <div class="h-48  flex items-center justify-center">
+          <img class="object-cover rounded-t-lg w-full h-full" src="${proiect.image}">
         </div>
-        <div class="text-xl font-bold text-gray-800 leading-none tracking-tight">
-            <h2 class="text-xl font-bold text-gray-800">${proiect.title}</h2>
+        <div class="text-xl font-boldleading-none tracking-tight">
+            <h2 class="text-xl font-bold text-gray-200">${proiect.title}</h2>
         </div>
         <div class="p-6 pt-0">
-            <p class="text-gray-600 text-sm">${proiect.description}</p>
+            <p class="text-amber-400 text-sm">${proiect.description}</p>
         </div>
     </div>
     `;
@@ -231,7 +236,6 @@ const handleScroll = () => {
         "border",
         "border-cyan-500/20"
       );
-      console.log("scroll");
     } else {
       navbar.classList.remove(
         "fixed",
@@ -247,10 +251,17 @@ const handleScroll = () => {
     }
   }
 };
-
+const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 const submitForm = () => {
+  if (!numeInput.value || !emailInput.value || !subiectInput.value || !mesajInput.value){
+    alert("Te rog sa completezi tot formularul!")
+    return
+  } else if (!emailRegex.test(emailInput.value)){
+    alert("Te rog introdu un email valid!")
+    return
+  }else {
   document.forms["contact-form"].submit();
-  contactForm.reset();
+  contactForm.reset()}
 };
 window.addEventListener("scroll", handleScroll);
 window.addEventListener("resize", handleResize);
